@@ -1,0 +1,8 @@
+C:\Users\Georgy\Documents\Visual Studio 2013\Projects\MFREAdvisorService\MFREAdvisorService\bin\Debug\MFREAdvisorService.exe.config
+C:\Users\Georgy\Documents\Visual Studio 2013\Projects\MFREAdvisorService\MFREAdvisorService\bin\Debug\MFREAdvisorService.exe
+C:\Users\Georgy\Documents\Visual Studio 2013\Projects\MFREAdvisorService\MFREAdvisorService\bin\Debug\MFREAdvisorService.pdb
+C:\Users\Georgy\Documents\Visual Studio 2013\Projects\MFREAdvisorService\MFREAdvisorService\obj\Debug\MFREAdvisorService.csprojResolveAssemblyReference.cache
+C:\Users\Georgy\Documents\Visual Studio 2013\Projects\MFREAdvisorService\MFREAdvisorService\obj\Debug\MFREAdvisorService.exe
+C:\Users\Georgy\Documents\Visual Studio 2013\Projects\MFREAdvisorService\MFREAdvisorService\obj\Debug\MFREAdvisorService.pdb
+C:\Users\Georgy\Documents\Visual Studio 2013\Projects\MFREAdvisorService\MFREAdvisorService\obj\Debug\MFREAdvisorService.ProjectInstaller.resources
+C:\Users\Georgy\Documents\Visual Studio 2013\Projects\MFREAdvisorService\MFREAdvisorService\obj\Debug\MFREAdvisorService.csproj.GenerateResource.Cache

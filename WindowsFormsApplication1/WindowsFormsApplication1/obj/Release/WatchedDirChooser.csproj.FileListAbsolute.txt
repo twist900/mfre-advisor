@@ -1,0 +1,9 @@
+C:\Users\Georgy\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Release\WatchedDirChooser.exe.config
+C:\Users\Georgy\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Release\WatchedDirChooser.exe
+C:\Users\Georgy\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Release\WatchedDirChooser.pdb
+C:\Users\Georgy\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Release\WatchedDirChooser.csprojResolveAssemblyReference.cache
+C:\Users\Georgy\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.SelectDir.resources
+C:\Users\Georgy\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Release\WatchedDirChooser.Properties.Resources.resources
+C:\Users\Georgy\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Release\WatchedDirChooser.csproj.GenerateResource.Cache
+C:\Users\Georgy\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Release\WatchedDirChooser.exe
+C:\Users\Georgy\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Release\WatchedDirChooser.pdb
