@@ -341,6 +341,7 @@
 		<col def="S0">ISDotNetInstallerArgsCommit</col>
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
+		<row><td>ISX_DEFAULTCOMPONENT</td><td>{91C24DBD-2205-4BDC-A295-A50F554AB972}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>MFREAdvisorService.Primary_output</td><td>{EE3656E7-E869-4F5F-A513-65A65E39E75D}</td><td>INSTALLDIR</td><td>2</td><td/><td>mfreadvisorservice.primary_o</td><td>81</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>WatchedDirChooser.Primary_output</td><td>{8CBB1E9B-94EF-4E14-9484-89AC2B2F9A0F}</td><td>INSTALLDIR</td><td>2</td><td/><td>watcheddirchooser.primary_ou</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
@@ -1869,6 +1870,7 @@
 	<table name="FeatureComponents">
 		<col key="yes" def="s38">Feature_</col>
 		<col key="yes" def="s72">Component_</col>
+		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT</td></row>
 		<row><td>AlwaysInstall</td><td>MFREAdvisorService.Primary_output</td></row>
 		<row><td>AlwaysInstall</td><td>WatchedDirChooser.Primary_output</td></row>
 	</table>
@@ -1885,6 +1887,8 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
+		<row><td>files_list.html</td><td>ISX_DEFAULTCOMPONENT</td><td>FILES_~1.HTM|files_list.html</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Georgy\Desktop\MFService\files_list.html</td><td>1</td><td/></row>
+		<row><td>files_log.html</td><td>ISX_DEFAULTCOMPONENT</td><td>FILES_~1.HTM|files_log.html</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Georgy\Desktop\MFService\files_log.html</td><td>1</td><td/></row>
 		<row><td>mfreadvisorservice.primary_o</td><td>MFREAdvisorService.Primary_output</td><td>MFREAdvisorService.Primary output</td><td>0</td><td/><td/><td>0</td><td>1</td><td>&lt;MFREAdvisorService&gt;|Built</td><td>3</td><td/></row>
 		<row><td>watcheddirchooser.primary_ou</td><td>WatchedDirChooser.Primary_output</td><td>WatchedDirChooser.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;WatchedDirChooser&gt;|Built</td><td>3</td><td/></row>
 	</table>
@@ -2028,6 +2032,7 @@
 		<col def="S0">FTPLocation</col>
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
+		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_88A23F1A_C7EC_4618_940A_55EC868E0114_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>MFREAdvisorService.Primary_output</td><td/><td/><td>_E67A93F5_9647_48B8_AA4E_7E1777124A7C_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>WatchedDirChooser.Primary_output</td><td/><td/><td>_D5B35549_AB7E_4F13_AB73_091B1E72D1E2_FILTER</td><td/><td/><td/><td/></row>
 	</table>

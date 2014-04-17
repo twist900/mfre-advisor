@@ -43,27 +43,38 @@ namespace WindowsFormsApplication1
 
         private void OKBtn_Click(object sender, EventArgs e)
         {
-            //string currentDirectory = Directory.GetCurrentDirectory();
-            String localAppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            FileSystemWatcher Watcher = new FileSystemWatcher();
+            string assemblyPath = Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
+            string filePath = Path.Combine(assemblyPath, "directory.xml");
+           
+            
+            /* string appFolderName = "MFService";
+            String localAppDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.
+                LocalApplicationData), appFolderName);
             string fileName = "directory.txt";
-            string filePath = System.IO.Path.Combine(localAppDataPath, fileName);
+            string filePath = Path.Combine(localAppDataPath, fileName);
+            */
             if (Directory.Exists(dirPathTextBox.Text) && !dirPathTextBox.Text.Equals(""))
             {
-                System.IO.File.WriteAllText(filePath, dirPathTextBox.Text);
+               /* if (!Directory.Exists(localAppDataPath))
+                {
+                    Directory.CreateDirectory(localAppDataPath);
+                }
+                */
+
+                File.WriteAllText(filePath, dirPathTextBox.Text);
                 Application.Exit();
-               
-               
+
+
 
             }
-            else 
-            { 
+            else
+            {
                 string message = dirPathTextBox.Text + " is not a valid directory.";
                 string caption = "Invalid directory";
                 MessageBox.Show(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
+
             }
-           
-            
         }
 
         

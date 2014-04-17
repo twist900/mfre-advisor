@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html []>
+<html>
+  <head>
+    <title> MFre-Advisor Updated files list</title>
+    <style>
+body 
+{
+	background: #999;
+}
+
+#Main 
+{
+	background: #FFF;
+	margin: 2em;
+	padding: 2em;
+}
+
+#Main h3{
+	text-align: center;
+	font-family: Verdana;
+}
+
+table{
+	width:100%;
+	border-collapse:collapse;
+	table-layout:auto;
+	vertical-align:top;
+	margin-bottom:15px;
+	border:1px solid #CCCCCC;
+	}
+
+table thead th{
+	color:#FFFFFF;
+	background-color:#666666;
+	border:1px solid #CCCCCC;
+	border-collapse:collapse;
+	text-align:center;
+	table-layout:auto;
+	vertical-align:middle;
+	}
+	
+table thead th:hover{
+	background-color:#6666CC;
+	}
+
+table thead th.ascend{
+	background-color:#6666CC;
+	}
+
+table tbody td{
+	vertical-align:top;
+	border-collapse:collapse;
+	border-left:1px solid #CCCCCC;
+	border-right:1px solid #CCCCCC;
+	}
+	
+table thead th, table tbody td{
+	padding:5px;
+	border-collapse:collapse;
+	}
+
+table tbody tr.light{
+	color:#666666;
+	background-color:#F7F7F7;
+	}
+
+table tbody tr.dark{
+	color:#666666;
+	background-color:#E8E8E8;
+	}
+	</style>
+  </head>
+  <body>
+    <div id="Main">
+      <h3> Recent File Updates </h3>
+      <table id="sortedTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Change</th>
+            <th>Full file path</th>
+            <th abbr="date">Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
+      </table>
+    </div>
+    <script type="text/javascript">
+      <!--
+
+function syncTimes() {
+	var lastdate;
+	var offset;
+	var userdate;
+	var useroffset;
+
+	function getLastUpdate() { 
+	   var metas = document.getElementsByTagName('meta'); 
+
+	   for (i=0; i<metas.length; i++) { 
+		  if (metas[i].getAttribute("name") == "lastUpdate") { 
+			 var date_string = metas[i].getAttribute("date"); 
+			 lastdate = new Date(date_string);
+			 var offset_string = metas[i].getAttribute("offset");
+			 offset = new Date(offset_string);
+		  } 
+	   } 
+
+		return "";
+	}
+
+	function getUserLastUpdate() { 
+	   var metas = document.getElementsByTagName('meta'); 
+
+	   for (i=0; i<metas.length; i++) { 
+		  if (metas[i].getAttribute("name") == "lastUpdate") { 
+			 var date_string = metas[i].getAttribute("date"); 
+			 var offset_string = metas[i].getAttribute("offset");
+		  } 
+	   } 
+
+		return "";
+	}
+	
+	document.write(lastdate);
+}
+
+//Some helper functions
+function setCookie(cname,cvalue,exdays)
+{
+var d = new Date();
+d.setTime(d.getTime()+(exdays*24*60*60*1000));
+var expires = "expires="+d.toGMTString();
+document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+
+function getCookie(cname)
+{
+var name = cname + "=";
+var ca = document.cookie.split(';');
+for(var i=0; i<ca.length; i++) 
+  {
+  var c = ca[i].trim();
+  if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+}
+return "";
+}
+
+function TableSorter(){
+	var table = Object;
+	var trs = Array;
+	var ths = Array;
+	var curSortCol = Object;
+	var prevSortCol = '0';
+	var sortType = Object;
+
+	function get(){}
+
+	function getCell(index){
+		return trs[index].cells[curSortCol] 
+	}
+
+	function parseDate(datestring){
+		var months = {"Jan":0,"Feb":1,"Mar":2,"Apr":3,"May":4,"Jun":5,"Jul":6,"Aug":7,"Sep":8,"Oct":9,"Nov":10,"Dec":11};
+		var timearray = datestring.split(/[\-\ \:\.\/]/g);
+		return parseInt(timearray[2]) * 10000000000 + parseInt(timearray[1]) * 100000000 + parseInt(timearray[0]) * 1000000 + parseInt(timearray[3]) * 10000 + parseInt(timearray[4]) * 100 + parseInt(timearray[5]);
+	}
+	
+	this.init = function(tableName)
+	{
+		table = document.getElementById(tableName);
+		ths = table.getElementsByTagName("th");
+		trs = table.tBodies[0].getElementsByTagName("tr");
+
+		for(var i = 0; i < ths.length ; i++)
+		{
+			ths[i].onclick = function()
+			{
+				sort(this);
+			}
+		}
+		ths[3].onclick();
+		recolour(0);
+		return true;
+	};
+	
+	function sort(oTH)
+	{
+		curSortCol = oTH.cellIndex;
+		sortType = oTH.abbr;
+		
+		//set the get function
+		setGet(sortType)
+
+		// if already sorted just reverse
+		if(prevSortCol == curSortCol)
+		{
+			oTH.className = (oTH.className != 'ascend' ? 'ascend' : 'descend' );
+			reverseTable();
+		}
+		// not sorted - call quicksort
+		else
+		{
+			oTH.className = 'ascend';
+			if(ths[prevSortCol].className != 'exc_cell'){ths[prevSortCol].className = '';}
+			quicksort(0, trs.length);
+		}
+		prevSortCol = curSortCol;
+		recolour(0);
+	}
+	
+	function setGet(sortType)
+	{
+		switch(sortType)
+		{   
+			case "image_number":
+				get = function(index){	
+					return getCell(index).childNodes[1].nodeValue;
+				}
+				break;
+			case "link":
+				get = function(index){
+					return  getCell(index).firstChild.firstChild.nodeValue;
+				};
+				break;
+			case "input_text":
+				get = function(index){	
+					return getCell(index).firstChild.value;
+				};
+				break;
+			case "number":
+				get = function(index){	
+					return parseInt(getCell(index).firstChild.nodeValue, 10);
+				}
+				break;
+			case "date":
+				get = function(index){	
+					return parseDate(getCell(index).firstChild.nodeValue);
+				}
+				break;
+			default:
+				get = function(index){	return getCell(index).firstChild.nodeValue;};
+				break;
+		};
+	}
+	
+	function recolour(startFrom)
+	{
+		for(var i = startFrom; i < trs.length - 1; i+=2)
+		{
+			trs[i].className = 'light';
+			trs[i+1].className = 'dark';
+		}
+		if((trs.length - 1) % 2)
+		{
+			trs[trs.length - 1].className = 'dark';
+		}
+		else
+		{
+			trs[trs.length - 1].className = 'light';
+		}
+	}
+
+	function exchange(i, j)
+	{
+		if(i == j+1) {
+			table.tBodies[0].insertBefore(trs[i], trs[j]);
+		} else if(j == i+1) {
+			table.tBodies[0].insertBefore(trs[j], trs[i]);
+		} else {
+			var tmpNode = table.tBodies[0].replaceChild(trs[i], trs[j]);
+			if(typeof(trs[i]) == "undefined") {
+				table.appendChild(tmpNode);
+			} else {
+				table.tBodies[0].insertBefore(tmpNode, trs[i]);
+			}
+		}
+		
+	}
+	
+	function reverseTable()
+	{
+		for(var i = 1; i<trs.length; i++)
+		{
+			table.tBodies[0].insertBefore(trs[i], trs[0]);
+		}
+	}
+
+	function quicksort(lo, hi)
+	{
+		if(hi <= lo+1) return;
+		 
+		if((hi - lo) == 2) {
+			if(get(hi-1) > get(lo)) exchange(hi-1, lo);
+			return;
+		}
+		
+		var i = lo + 1;
+		var j = hi - 1;
+		
+		if(get(lo) > get(i)) exchange(i, lo);
+		if(get(j) > get(lo)) exchange(lo, j);
+		if(get(lo) > get(i)) exchange(i, lo);
+		
+		var pivot = get(lo);
+		
+		while(true) {
+			j = j - 1;
+			while(pivot > get(j)) j = j - 1;
+			i++;
+			while(get(i) > pivot) i++;
+			if(j <= i) break;
+			exchange(i, j);
+		}
+		exchange(lo, j);
+		
+		if((j-lo) < (hi-j)) {
+			quicksort(lo, j);
+			quicksort(j+1, hi);
+		} else {
+			quicksort(j+1, hi);
+			quicksort(lo, j);
+		}
+	}
+}
+-->
+    </script>
+    <script type="text/javascript">
+function init()
+{
+	var Table1Sorter = new TableSorter;
+	Table1Sorter.init('sortedTable');
+}
+	
+window.onload = init;
+</script>
+  </body>
+</html>
